@@ -1,26 +1,30 @@
 import { Component } from '@angular/core';
 
+export interface Patient {
+  address?: string;
+  name?: string;
+}
+
+
 @Component({
   selector: 'app-patient-list',
   templateUrl: './patient-list.component.html',
   styleUrls: ['./patient-list.component.scss']
 })
+
 export class PatientList {
-  patientList = [
+  patientList: Patient[] = [
     {
       address: 'Duong Quang Ham',
       name: 'Hoan Nguyen',
-      examinations: []
     },
     {
       address: 'Nguyen Thai Son',
       name: 'Kiet Pham',
-      examinations: []
     },
     {
       address: 'Cong Hoa',
       name: 'Khanh Nguyen',
-      examinations: []
     }
   ]
 
