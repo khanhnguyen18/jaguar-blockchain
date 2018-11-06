@@ -70,12 +70,12 @@ export class PatientList {
 
   getStatus() {
     const that = this;
-    this.ethcontractService.getTest();
-    // .then(function(status : any){
-    //   that.status =  status;
-    // }).catch(function(error){
-    //   that.error =  error;
-    // });
+    this.ethcontractService.getTest()
+    .then(function(status : any){
+      that.status =  status;
+    }).catch(function(error){
+      that.error =  error;
+    });
   };
 
   createPatient(name: string, address: string) {
