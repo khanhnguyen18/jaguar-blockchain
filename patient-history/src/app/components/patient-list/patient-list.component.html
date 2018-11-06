@@ -18,12 +18,9 @@
   <mat-form-field class="example-full-width">
     <input #adress matInput placeholder="Adress">
   </mat-form-field>
-  <app-examination-request [examinationList] = "currentExams"></app-examination-request>
 </form>
-<br>
-<br>
 <div><button class="app-button" mat-raised-button color="primary"
              (click)="createPatient(name.value, adress.value)">Add Patient</button></div>
-
+<app-examination-request [examinationList] = "currentExams"></app-examination-request>
 {{acctInfo | json}}
 {{error | json}}
