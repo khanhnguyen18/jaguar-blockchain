@@ -1,0 +1,38 @@
+<h2>Examination request</h2>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Result</th>
+    <th>Cost</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let exam of examinationList">
+    <td>{{exam.name}}</td>
+    <td>{{exam.result}}</td>
+    <td>{{exam.cost}}</td>
+    <td>{{exam.status?'finished':'pending'}}</td>
+    <td><button color="primary" (click)="name.value = exam.name ;
+    result.value = exam.result;
+  cost.value = exam.cost;
+    status.value = exam.status;
+">Edit</button></td>
+  </tr>
+</table>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input #name matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input #result matInput placeholder="Result">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input #cost matInput placeholder="Cost">
+  </mat-form-field>
+  <mat-radio-group #status class="example-full-width" >
+    <mat-radio-button value="true">finished</mat-radio-button>
+    <mat-radio-button value="false">pending</mat-radio-button>
+  </mat-radio-group>
+</form>
+<div><button class="app-button" mat-raised-button color="primary"
+             (click)="createExam(name.value, result.value, cost.value, status.value)">Add Examination</button></div>
