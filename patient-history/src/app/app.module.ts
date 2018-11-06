@@ -9,6 +9,7 @@ import {RouterModule} from "@angular/router";
 import {UiExampleComponent} from "./components/ui-example/ui-example.component";
 import {PatientList} from "./components/patient-list/patient-list.component";
 import {EthcontractService} from "./services/eth-contract.service";
+import {ExaminationRequestComponent} from "./components/examination-request/examination-request.component";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {EthcontractService} from "./services/eth-contract.service";
     PatientList,
     AppComponent,
     UiExampleComponent,
+    ExaminationRequestComponent,
   ],
   imports: [
     BrowserModule,
