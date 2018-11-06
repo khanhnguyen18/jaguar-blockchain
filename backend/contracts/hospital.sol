@@ -18,4 +18,8 @@ contract Hospital {
         
         emit PatientCreated(newPatient);
     }
+    
+    function getPatients() public view returns(address[]) {
+        return patients;
+    }
 }
