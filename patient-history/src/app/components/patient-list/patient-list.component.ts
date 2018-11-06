@@ -69,6 +69,7 @@ export class PatientList {
       this.patientList.push({
         address: address,
         name: name,
+        exams: []
       })
   }
 }
