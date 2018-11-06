@@ -14,7 +14,7 @@ import {PatientList} from "./components/patient-list.component";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    UIMaterialModule
+    UIMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
