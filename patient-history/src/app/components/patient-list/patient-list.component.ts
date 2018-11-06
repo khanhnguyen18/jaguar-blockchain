@@ -24,4 +24,10 @@ export class PatientList {
     }
   ]
 
+  createPatient(name: string, address: string) {
+      this.patientList.push({
+        address: address,
+        name: name,
+      })
+  }
 }
