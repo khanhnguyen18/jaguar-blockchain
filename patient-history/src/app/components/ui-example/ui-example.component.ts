@@ -6,7 +6,7 @@ import {MatDialog, MatDialogRef, MatSnackBar} from "@angular/material";
   templateUrl: './ui-example.component.html',
   styleUrls: ['./ui-example.component.scss']
 })
-export class UiExampleComponent implements OnInit {
+export class UiExampleComponent {
   isDarkTheme = false;
   lastDialogResult: string;
   mode: string;

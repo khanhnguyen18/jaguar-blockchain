@@ -1,6 +1,7 @@
 import {Routes} from "@angular/router";
 import {UiExampleComponent} from "./components/ui-example/ui-example.component";
-import {PatientList} from "./components/patient-list.component";
+import {PatientList} from "./components/patient-list/patient-list.component";
+
 
 export const appRoutes: Routes = [
   { path: 'ui-example', component: UiExampleComponent },

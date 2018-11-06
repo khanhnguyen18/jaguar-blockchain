@@ -4,10 +4,10 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AppMaterialModule} from "./app.material.module";
-import {PatientList} from "./components/patient-list.component";
 import {appRoutes} from "./app.routing";
 import {RouterModule} from "@angular/router";
 import {UiExampleComponent} from "./components/ui-example/ui-example.component";
+import {PatientList} from "./components/patient-list/patient-list.component";
 
 @NgModule({
   declarations: [
