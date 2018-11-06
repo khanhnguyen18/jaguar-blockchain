@@ -55,7 +55,7 @@ export class PatientList {
 
   currentExams = [];
   constructor( private ethcontractService: EthcontractService ){
-    // this.initAndDisplayAccount();
+    this.initAndDisplayAccount();
     this.getStatus();
   }
 
@@ -71,7 +71,7 @@ export class PatientList {
   getStatus() {
     const that = this;
     this.ethcontractService.getTest();
-    //   .then(function(status : any){
+    // .then(function(status : any){
     //   that.status =  status;
     // }).catch(function(error){
     //   that.error =  error;
