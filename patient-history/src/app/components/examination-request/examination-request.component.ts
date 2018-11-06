@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 export interface Examination {
   name?: string;
@@ -13,20 +13,8 @@ export interface Examination {
   styleUrls: ['./examination-request.component.scss']
 })
 export class ExaminationRequestComponent {
-  examinationList: Examination[] = [
-    {
-      name: 'bood check',
-      result: 'Abnormal',
-      cost: 150,
-      status: true,
-    },
-    {
-      name: 'skin check',
-      result: 'normal',
-      cost: 250,
-      status: true,
-    },
-  ];
+  @Input() examinationList: Examination[];
+
   createExam(name, result, cost, status) {
     this.examinationList.push({
       name: name,

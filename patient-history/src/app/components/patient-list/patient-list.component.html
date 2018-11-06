@@ -8,7 +8,7 @@
   <tr *ngFor="let patient of patientList">
     <td>{{patient.name}}</td>
     <td>{{patient.address}}</td>
-    <td><button color="primary" (click)="name.value = patient.name ; adress.value = patient.address;">Edit</button></td>
+    <td><button color="primary" (click)="name.value = patient.name ; adress.value = patient.address; currentExams = patient.exams">Edit</button></td>
   </tr>
 </table>
 <form class="example-form">
@@ -18,9 +18,12 @@
   <mat-form-field class="example-full-width">
     <input #adress matInput placeholder="Adress">
   </mat-form-field>
-
+  <app-examination-request [examinationList] = "currentExams"></app-examination-request>
 </form>
-<div><button class="app-button" mat-raised-button color="primary" (click)="createPatient(name.value, adress.value)">Add</button></div>
-<app-examination-request></app-examination-request>
+<br>
+<br>
+<div><button class="app-button" mat-raised-button color="primary"
+             (click)="createPatient(name.value, adress.value)">Add Patient</button></div>
+
 {{acctInfo | json}}
 {{error | json}}
