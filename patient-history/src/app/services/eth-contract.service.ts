@@ -5,7 +5,7 @@ import * as TruffleContract from 'truffle-contract';
 declare let require: any;
 declare let window: any;
 
-// let tokenAbi = require('../../../../backend/compiled-contracts/');
+let tokenAbi = require('../../../../backend/compiled-contracts/json/hospital.json');
 
 @Injectable({
   providedIn: 'root'
@@ -43,34 +43,36 @@ export class EthcontractService {
     });
   }
 
-  // transferEther(
-  //   _transferFrom,
-  //   _transferTo,
-  //   _amount,
-  //   _remarks
-  // ) {
-  //   let that = this;
-  //
-  //   return new Promise((resolve, reject) => {
-  //     let paymentContract = TruffleContract(tokenAbi);
-  //     paymentContract.setProvider(that.web3Provider);
-  //
-  //     paymentContract.deployed().then(function(instance) {
-  //       return instance.transferFund(
-  //         _transferTo,
-  //         {
-  //           from:_transferFrom,
-  //           value:window.web3.toWei(_amount, "ether")
-  //         });
-  //     }).then(function(status) {
-  //       if(status) {
-  //         return resolve({status:true});
-  //       }
-  //     }).catch(function(error){
-  //       console.log(error);
-  //
-  //       return reject("Error in transferEther service call");
-  //     });
-  //   });
-  // }
+  
+
+  transferEther(
+    _transferFrom,
+    _transferTo,
+    _amount,
+    _remarks
+  ) {
+    let that = this;
+
+    return new Promise((resolve, reject) => {
+      let paymentContract = TruffleContract(tokenAbi);
+      paymentContract.setProvider(that.web3Provider);
+
+      paymentContract.deployed().then(function(instance) {
+        return instance.transferFund(
+          _transferTo,
+          {
+            from:_transferFrom,
+            value:window.web3.toWei(_amount, "ether")
+          });
+      }).then(function(status) {
+        if(status) {
+          return resolve({status:true});
+        }
+      }).catch(function(error){
+        console.log(error);
+
+        return reject("Error in transferEther service call");
+      });
+    });
+  }
 }
