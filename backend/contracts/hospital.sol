@@ -12,8 +12,8 @@ contract Hospital {
         _name = name;
     }
     
-    function createPatient(string _address, string _name) public {
-        Patient newPatient = new Patient(_address, _name);
+    function createPatient(string add, string name) public {
+        Patient newPatient = new Patient(add, name);
         patients.push(newPatient);
         
         emit PatientCreated(newPatient);
