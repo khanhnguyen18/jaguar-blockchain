@@ -7,7 +7,7 @@
   <tr *ngFor="let patient of patientList">
     <td>{{patient.name}}</td>
     <td>{{patient.address}}</td>
-    <td></td>
+    <td><button color="primary" (click)="name.value = patient.name ; adress.value = patient.address;">Edit</button></td>
   </tr>
 </table>
 <form class="example-form">
