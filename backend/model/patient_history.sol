@@ -24,4 +24,7 @@ contract PatientHistory {
         string _name;
         Examination[] _examinations;
     }
+    
+    address patientAddress;
+    Patient patient;
 }
