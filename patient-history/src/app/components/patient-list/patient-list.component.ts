@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {EthcontractService} from "../../services/eth-contract.service";
+
 
 export interface Patient {
   address?: string;
@@ -13,6 +15,7 @@ export interface Patient {
 })
 
 export class PatientList {
+
   patientList: Patient[] = [
     {
       address: 'Duong Quang Ham',
@@ -26,7 +29,23 @@ export class PatientList {
       address: 'Cong Hoa',
       name: 'Khanh Nguyen',
     }
-  ]
+  ];
+
+  acctInfo: any;
+  error: any;
+
+  constructor( private ethcontractService: EthcontractService ){
+    this.initAndDisplayAccount();
+  }
+
+  initAndDisplayAccount() {
+    const that = this;
+    this.ethcontractService.getAccountInfo().then(function(acctInfo : any){
+      that.acctInfo =  acctInfo;
+    }).catch(function(error){
+      that.error =  error;
+    });
+  };
 
   createPatient(name: string, address: string) {
       this.patientList.push({

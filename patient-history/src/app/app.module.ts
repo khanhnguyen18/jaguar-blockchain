@@ -8,6 +8,7 @@ import {appRoutes} from "./app.routing";
 import {RouterModule} from "@angular/router";
 import {UiExampleComponent} from "./components/ui-example/ui-example.component";
 import {PatientList} from "./components/patient-list/patient-list.component";
+import {EthcontractService} from "./services/eth-contract.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import {PatientList} from "./components/patient-list/patient-list.component";
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [
+    EthcontractService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
