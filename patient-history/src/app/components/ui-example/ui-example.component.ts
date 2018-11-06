@@ -1,12 +1,12 @@
-import {Component, Optional} from '@angular/core';
+import {Component, OnInit, Optional} from '@angular/core';
 import {MatDialog, MatDialogRef, MatSnackBar} from "@angular/material";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-ui-example',
+  templateUrl: './ui-example.component.html',
+  styleUrls: ['./ui-example.component.scss']
 })
-export class AppComponent {
+export class UiExampleComponent implements OnInit {
   isDarkTheme = false;
   lastDialogResult: string;
   mode: string;
