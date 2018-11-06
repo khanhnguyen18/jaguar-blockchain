@@ -43,7 +43,36 @@ export class EthcontractService {
     });
   }
 
-  
+  getTest() {
+    const patientContract = window.web3.eth.contract(tokenAbi.abi);
+    patientContract.testStatus(function(err, status) {
+      console.log(status);
+    });
+    // return new Promise((resolve, reject) => {
+    //   window.web3.eth.getCoinbase(function(err, account) {
+    //     Courses.getInstructor()
+    //
+    //   })
+    // })
+
+    // let that = this;
+    //
+    // return new Promise((resolve, reject) => {
+    //   let paymentContract = TruffleContract(tokenAbi);
+    //   paymentContract.setProvider(that.web3Provider);
+    //
+    //   paymentContract.deployed().then(function(instance) {
+    //     return instance.testStatus();
+    //   }).then(function(status) {
+    //     if(status) {
+    //       return resolve(status);
+    //     }
+    //   }).catch(function(error){
+    //     console.log(error);
+    //     return reject("Error in transferEther service call");
+    //   });
+    // });
+  }
 
   transferEther(
     _transferFrom,
