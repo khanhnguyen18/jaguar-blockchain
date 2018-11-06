@@ -3,8 +3,6 @@ import "./examination.sol";
 
 contract Examination {
     
-    event ExaminationCreated(address);
-    
     enum Status {
         PENDING,
         FINISHED

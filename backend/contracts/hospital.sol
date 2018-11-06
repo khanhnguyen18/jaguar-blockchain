@@ -3,10 +3,10 @@ import "./patient.sol";
 
 contract Hospital {
     
-    event PatientCreated(address patientAddress);
+    event PatientCreated(Patient patient);
     
     string _name;
-    address[] patients;
+    Patient[] patients;
     
     constructor (string name) public {
         _name = name;
@@ -19,7 +19,7 @@ contract Hospital {
         emit PatientCreated(newPatient);
     }
     
-    function getPatients() public view returns(address[]) {
+    function getPatients() public view returns(Patient[]) {
         return patients;
     }
 }

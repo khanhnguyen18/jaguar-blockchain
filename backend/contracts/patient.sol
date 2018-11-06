@@ -3,11 +3,11 @@ import "./examination.sol";
 
 contract Patient {
 
-    event ExaminationCreated(address examination);
+    event ExaminationCreated(Examination examination);
     
     string _address;
     string _name;
-    address[] _examinations;
+    Examination[] _examinations;
     
     constructor(string add, string name) public {
         _address = add;
@@ -21,7 +21,7 @@ contract Patient {
         emit ExaminationCreated(newExamination);
     }
     
-    function getExaminations() public view returns(address[]) {
+    function getExaminations() public view returns(Examination[]) {
         return _examinations;
     }
 }
